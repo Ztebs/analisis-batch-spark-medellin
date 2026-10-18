@@ -1,0 +1,204 @@
+26/10/17 22:35:15 WARN Utils: Your hostname, BIGDATA resolves to a loopback address: 127.0.1.1; using 192.168.1.16 instead (on interface enp0s3)
+26/10/17 22:35:15 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+26/10/17 22:35:17 INFO SparkContext: Running Spark version 3.5.9
+26/10/17 22:35:17 INFO SparkContext: OS info Linux, 5.15.0-191-generic, amd64
+26/10/17 22:35:17 INFO SparkContext: Java version 11.0.32.1
+26/10/17 22:35:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/17 22:35:18 INFO ResourceUtils: ==============================================================
+26/10/17 22:35:18 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/17 22:35:18 INFO ResourceUtils: ==============================================================
+26/10/17 22:35:18 INFO SparkContext: Submitted application: AccidentesMedellinBatch
+26/10/17 22:35:19 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/17 22:35:19 INFO ResourceProfile: Limiting resource is cpu
+26/10/17 22:35:19 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/17 22:35:19 INFO SecurityManager: Changing view acls to: vboxuser
+26/10/17 22:35:19 INFO SecurityManager: Changing modify acls to: vboxuser
+26/10/17 22:35:19 INFO SecurityManager: Changing view acls groups to: 
+26/10/17 22:35:19 INFO SecurityManager: Changing modify acls groups to: 
+26/10/17 22:35:19 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: vboxuser; groups with view permissions: EMPTY; users with modify permissions: vboxuser; groups with modify permissions: EMPTY
+26/10/17 22:35:19 INFO Utils: Successfully started service 'sparkDriver' on port 45349.
+26/10/17 22:35:19 INFO SparkEnv: Registering MapOutputTracker
+26/10/17 22:35:20 INFO SparkEnv: Registering BlockManagerMaster
+26/10/17 22:35:20 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/17 22:35:20 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/17 22:35:20 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/17 22:35:20 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-7e2603f7-d923-45b9-8332-955904e3127d
+26/10/17 22:35:20 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/10/17 22:35:20 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/17 22:35:21 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/17 22:35:21 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/17 22:35:21 INFO Executor: Starting executor ID driver on host 192.168.1.16
+26/10/17 22:35:21 INFO Executor: OS info Linux, 5.15.0-191-generic, amd64
+26/10/17 22:35:21 INFO Executor: Java version 11.0.32.1
+26/10/17 22:35:21 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/17 22:35:21 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@37b3294e for default.
+26/10/17 22:35:21 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36645.
+26/10/17 22:35:21 INFO NettyBlockTransferService: Server created on 192.168.1.16:36645
+26/10/17 22:35:21 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/17 22:35:21 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.16, 36645, None)
+26/10/17 22:35:21 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.16:36645 with 434.4 MiB RAM, BlockManagerId(driver, 192.168.1.16, 36645, None)
+26/10/17 22:35:21 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.16, 36645, None)
+26/10/17 22:35:21 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.16, 36645, None)
+
+=== 1. CARGA ===
+Filas leídas: 702,540
+Columnas: ['llave', 'anio', 'fecha', 'hora', 'clase', 'gravedad', 'direccion', 'latitud', 'longitud', 'cod_comuna', 'comuna', 'cod_barrio', 'barrio']
+root
+ |-- llave: string (nullable = true)
+ |-- anio: string (nullable = true)
+ |-- fecha: string (nullable = true)
+ |-- hora: string (nullable = true)
+ |-- clase: string (nullable = true)
+ |-- gravedad: string (nullable = true)
+ |-- direccion: string (nullable = true)
+ |-- latitud: string (nullable = true)
+ |-- longitud: string (nullable = true)
+ |-- cod_comuna: string (nullable = true)
+ |-- comuna: string (nullable = true)
+ |-- cod_barrio: string (nullable = true)
+ |-- barrio: string (nullable = true)
+
+26/10/17 22:35:33 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+=== 2. LIMPIEZA ===
+Filas después de limpiar: 702,540 (se descartaron 0)
+Valores nulos por columna:
+-RECORD 0-----------
+ llave      | 0     
+ anio       | 0     
+ fecha      | 0     
+ hora       | 0     
+ clase      | 0     
+ gravedad   | 0     
+ direccion  | 11100 
+ latitud    | 44785 
+ longitud   | 44785 
+ cod_comuna | 28154 
+ comuna     | 28154 
+ cod_barrio | 46732 
+ barrio     | 46732 
+ hora_dia   | 0     
+ dia_semana | 0     
+ franja     | 0     
+ es_fatal   | 0     
+
+=== 3. ANÁLISIS EXPLORATORIO ===
+Distribución por gravedad:
++----------+------+
+|  gravedad| count|
++----------+------+
+|    HERIDO|400373|
+|SOLO DAÑOS|299405|
+|    MUERTO|  2762|
++----------+------+
+
+Incidentes por año (con fatales):
++----+----------+-------+
+|anio|incidentes|fatales|
++----+----------+-------+
+|2008|     37672|    179|
+|2009|     38210|    150|
+|2010|     38539|    131|
+|2011|     41779|    166|
+|2012|     46439|    154|
+|2013|     48601|    149|
+|2014|     45609|    136|
+|2015|     46061|    150|
+|2016|     47300|    138|
+|2017|     46100|    144|
+|2018|     43307|    131|
+|2019|     45792|    148|
+|2020|     31931|    172|
+|2021|     40599|    162|
+|2022|     38720|    226|
+|2023|     24511|    160|
+|2024|     22562|    164|
+|2025|     18808|    102|
++----+----------+-------+
+
+Por clase de incidente (con % fatales):
++--------------+----------+-------+-----------+
+|clase         |incidentes|fatales|pct_fatales|
++--------------+----------+-------+-----------+
+|Choque        |460807    |1524   |0.33       |
+|Otro          |91254     |137    |0.15       |
+|Atropello     |74663     |961    |1.29       |
+|Caida Ocupante|53555     |89     |0.17       |
+|Volcamiento   |22164     |50     |0.23       |
+|Incendio      |97        |1      |1.03       |
++--------------+----------+-------+-----------+
+
+Por franja horaria:
++-----------------+----------+-------+-----------+
+|franja           |incidentes|fatales|pct_fatales|
++-----------------+----------+-------+-----------+
+|1-Madrugada (0-5)|51960     |631    |1.214      |
+|2-Mañana (6-11)  |209089    |670    |0.32       |
+|3-Tarde (12-17)  |268965    |705    |0.262      |
+|4-Noche (18-23)  |172526    |756    |0.438      |
++-----------------+----------+-------+-----------+
+
+Por hora del día:
+Por día de la semana:
++----------+----------+-------+
+|dia_semana|incidentes|fatales|
++----------+----------+-------+
+|   Viernes|    110485|    381|
+|    Martes|    107002|    351|
+| Miercoles|    104277|    334|
+|    Jueves|    103792|    325|
+|    Sabado|    103346|    488|
+|     Lunes|    100233|    416|
+|   Domingo|     73405|    467|
++----------+----------+-------+
+
+Top 10 comunas con más incidentes:
++----------------+----------+-------+
+|comuna          |incidentes|fatales|
++----------------+----------+-------+
+|La Candelaria   |136918    |558    |
+|Laureles Estadio|69402     |212    |
+|Castilla        |64032     |359    |
+|El Poblado      |63494     |186    |
+|Belén           |47934     |140    |
+|Guayabal        |47829     |226    |
+|Robledo         |42248     |143    |
+|Aranjuez        |38626     |172    |
+|Buenos Aires    |25781     |70     |
+|La América      |24186     |54     |
++----------------+----------+-------+
+
+Top 10 comunas con más incidentes fatales:
++----------------+-----+
+|comuna          |count|
++----------------+-----+
+|La Candelaria   |558  |
+|Castilla        |359  |
+|Guayabal        |226  |
+|Laureles Estadio|212  |
+|El Poblado      |186  |
+|Aranjuez        |172  |
+|Robledo         |143  |
+|Belén           |140  |
+|Manrique        |81   |
+|Villa Hermosa   |77   |
++----------------+-----+
+
+=== 4. EJEMPLO CON RDD ===
+Incidentes fatales por clase (RDD, reduceByKey):
+  Choque: 1524
+  Atropello: 961
+  Otro: 137
+  Caida Ocupante: 89
+  Volcamiento: 50
+  Incendio: 1
+
+=== 5. GRÁFICOS ===
+  guardado: graficos/1_incidentes_por_anio.png
+  guardado: graficos/2_incidentes_por_clase.png
+  guardado: graficos/3_incidentes_por_hora.png
+  guardado: graficos/4_fatales_por_hora.png
+  guardado: graficos/5_top_comunas.png
+  guardado: graficos/6_top_comunas_fatales.png
+
+Listo. Resultados en las carpetas 'graficos' y 'tablas'.
